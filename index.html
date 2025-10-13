@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ayoub El Kirat · Portfolio</title>
+    <link rel="icon" href="public/ayoub.jpeg" />
+    <!-- TailwindCSS CDN (no build needed) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class'
+      }
+    </script>
+    <!-- Lucide icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      /* Smooth gradient text helper */
+      .gradient-text{background-image:linear-gradient(to right,#3b82f6,#14b8a6);-webkit-background-clip:text;background-clip:text;color:transparent}
+    </style>
+  </head>
+  <body class="bg-white text-gray-900">
+    <!-- Header -->
+    <header id="top" class="fixed inset-x-0 top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/80 dark:bg-gray-900/80 border-b border-gray-200 dark:border-gray-800">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="#home" class="text-xl font-bold dark:text-white">Ayoub <span class="gradient-text">El Kirat</span></a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#about" class="text-gray-900 dark:text-white hover:text-teal-600">About</a>
+          <a href="#skills" class="text-gray-900 dark:text-white hover:text-teal-600">Skills</a>
+          <a href="#projects" class="text-gray-900 dark:text-white hover:text-teal-600">Projects</a>
+          <a href="#certifications" class="text-gray-900 dark:text-white hover:text-teal-600">Certifications</a>
+          <a href="#experience" class="text-gray-900 dark:text-white hover:text-teal-600">Experience</a>
+          <a href="#gallery" class="text-gray-900 dark:text-white hover:text-teal-600">Gallery</a>
+          <a href="#contact" class="text-gray-900 dark:text-white hover:text-teal-600">Contact</a>
+        </nav>
+        <button id="toggleTheme" class="p-2 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition" aria-label="Toggle theme">
+          <i id="themeIcon" data-lucide="sun" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-24 px-6 bg-gradient-to-br from-blue-50 via-white to-teal-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6 text-center md:text-left">
+          <h1 class="text-5xl md:text-7xl font-bold dark:text-white">Ayoub <span class="gradient-text">El Kirat</span></h1>
+          <h2 class="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300">Computer Science Engineer | Full Stack Developer | AI Enthusiast</h2>
+          <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto md:mx-0">I'm a passionate software engineer specializing in full‑stack web development, AI integration, and cybersecurity. I love building innovative solutions that connect technology and people.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-2">
+            <a href="#projects" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg text-white bg-gradient-to-r from-blue-500 to-teal-500 shadow hover:shadow-lg hover:scale-[1.02] transition">View Projects</a>
+            <a href="public/CV Français Professionnel Simple Noir et Blanc (1).pdf" download class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border-2 border-gray-300 bg-white text-gray-900 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 transition">Download CV</a>
+          </div>
+        </div>
+        <div class="flex justify-center">
+          <div class="w-96 h-96 rounded-full overflow-hidden border-8 border-white dark:border-gray-700 shadow-2xl">
+            <img src="public/ayoub.jpeg" alt="Ayoub El Kirat" class="w-full h-full object-cover object-center"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-20 px-6 bg-gray-50 dark:bg-gray-900">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-8 dark:text-white">About <span class="gradient-text">Me</span></h2>
+        <p class="max-w-3xl mx-auto text-center text-gray-600 dark:text-gray-400">Detail‑oriented engineer with a passion for building delightful user experiences, robust backends, and secure systems. I enjoy collaborating, shipping quickly, and learning continuously.</p>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-20 px-6 bg-white dark:bg-gray-900">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 dark:text-white">Technical <span class="gradient-text">Skills</span></h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Programming Languages -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
+            <div class="w-14 h-14 rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center mb-4">
+              <i data-lucide="code" class="text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 dark:text-white">Programming Languages</h3>
+            <div class="flex flex-wrap gap-2 text-sm">
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">C</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">C++</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">C#</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Java</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Python</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">JavaScript</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">PHP</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">HTML/CSS</span>
+            </div>
+          </div>
+
+          <!-- Frameworks & Libraries -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
+            <div class="w-14 h-14 rounded-lg bg-gradient-to-r from-teal-500 to-teal-600 flex items-center justify-center mb-4">
+              <i data-lucide="wrench" class="text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 dark:text-white">Frameworks & Libraries</h3>
+            <div class="flex flex-wrap gap-2 text-sm">
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Django</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Laravel</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">React</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Node.js</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Bootstrap</span>
+            </div>
+          </div>
+
+          <!-- Databases & Data -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
+            <div class="w-14 h-14 rounded-lg bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center mb-4">
+              <i data-lucide="database" class="text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 dark:text-white">Databases & Data</h3>
+            <div class="flex flex-wrap gap-2 text-sm">
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">MySQL</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">PostgreSQL</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">PL/SQL</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Oracle</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Data Warehouse</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Hadoop</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">ETL</span>
+            </div>
+          </div>
+
+          <!-- DevOps & Tools -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
+            <div class="w-14 h-14 rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 flex items-center justify-center mb-4">
+              <i data-lucide="git-branch" class="text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 dark:text-white">DevOps & Tools</h3>
+            <div class="flex flex-wrap gap-2 text-sm">
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Git/GitHub</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Docker</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Docker Compose</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Notion</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">VS Code</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Agile/Scrum</span>
+            </div>
+          </div>
+
+          <!-- Networking & Security -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
+            <div class="w-14 h-14 rounded-lg bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center mb-4">
+              <i data-lucide="network" class="text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 dark:text-white">Networking & Security</h3>
+            <div class="flex flex-wrap gap-2 text-sm">
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Cisco</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Packet Tracer</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">PfSense</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Firewalls</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">VPN</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">IDS/IPS</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Network Security</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">System Hardening</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Linux</span>
+            </div>
+          </div>
+
+          <!-- Cybersecurity -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
+            <div class="w-14 h-14 rounded-lg bg-gradient-to-r from-red-500 to-red-600 flex items-center justify-center mb-4">
+              <i data-lucide="shield" class="text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 dark:text-white">Cybersecurity</h3>
+            <div class="flex flex-wrap gap-2 text-sm">
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Vulnerability Assessment</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Incident Response</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Penetration Testing</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Security Audits</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Web App Security (OWASP)</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">HTTPS</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Authentication</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">ISO/IEC 27001</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Compliance</span>
+            </div>
+          </div>
+
+          <!-- Security Tools -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
+            <div class="w-14 h-14 rounded-lg bg-gradient-to-r from-indigo-500 to-indigo-600 flex items-center justify-center mb-4">
+              <i data-lucide="wrench" class="text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 dark:text-white">Security Tools</h3>
+            <div class="flex flex-wrap gap-2 text-sm">
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Wireshark</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Metasploit</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Burp Suite</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Nmap</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Nessus</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects (placeholder cards to mirror layout) -->
+    <section id="projects" class="py-20 px-6 bg-gray-50 dark:bg-gray-900">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 dark:text-white">Featured <span class="gradient-text">Projects</span></h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Hospitality Management Application -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
+            <h3 class="text-lg font-bold mb-2 dark:text-white">Application de gestion hôtelière et restauration</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Conception et développement d’une solution de gestion (réservations, services, suivi opérationnel) avec modélisation complète.</p>
+            <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">Stack: UML, C++</p>
+          </div>
+
+          <!-- Car Rental Web App -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
+            <h3 class="text-lg font-bold mb-2 dark:text-white">Application Web de location de voitures</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Plateforme de gestion de flotte, réservations, tarification et paiements, avec interfaces responsives.</p>
+            <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">Stack: UML, Django, Bootstrap</p>
+          </div>
+
+          <!-- Notes app - containers -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
+            <h3 class="text-lg font-bold mb-2 dark:text-white">toodo‑app‑containers (privé)</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Application de prise de notes et mémoire, containerisée pour un déploiement reproductible sur différents environnements.</p>
+            <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">Stack: Docker, Kubernetes, Minikube</p>
+          </div>
+
+          <!-- E‑commerce site -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
+            <h3 class="text-lg font-bold mb-2 dark:text-white">Site e‑commerce</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Mise en place d’une boutique en ligne performante avec gestion des produits, commandes et contenus.</p>
+            <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">Stack: WordPress</p>
+          </div>
+
+          <!-- pfSense firewall lab -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
+            <h3 class="text-lg font-bold mb-2 dark:text-white">Lab pare‑feu avec pfSense</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Conception d’un lab réseau avec deux VMs (interne/externe) et un pare‑feu pfSense intermédiaire : règles, NAT, VLANs et monitoring.</p>
+            <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">Stack: pfSense, Virtualisation</p>
+          </div>
+
+          <!-- Password strength tester -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
+            <h3 class="text-lg font-bold mb-2 dark:text-white">Testeur de mots de passe</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Outil d’évaluation de robustesse des mots de passe (entropie, règles, dictionnaires; retours utilisateur en temps réel).</p>
+            <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">Stack: Python</p>
+          </div>
+
+          <!-- Network analysis -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
+            <h3 class="text-lg font-bold mb-2 dark:text-white">Analyse réseau et cartographie</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Scanning et profilage des hôtes/ports, capture et inspection du trafic pour diagnostic et durcissement.</p>
+            <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">Stack: Nmap, Wireshark</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications (titles only as requested) -->
+    <section id="certifications" class="py-20 px-6 bg-white dark:bg-gray-900">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 dark:text-white">Certifications <span class="gradient-text">& Courses</span></h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Each card: icon, title, org, score -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">Introduction à Java et à la programmation orientée objet</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">University of Pennsylvania</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 98.07%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">Essentiels et vulnérabilités des bases de données</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">IBM</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 93.70%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">React Native</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Meta</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 90.50%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">Introduction à Git et GitHub</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Google</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 100%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">Comprendre les normes de sécurité ISO pour votre organisation</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Codio</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 100%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">Introduction aux principes essentiels de cybersécurité</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">IBM</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 95.60%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">Introduction aux carrières en cybersécurité</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">IBM</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 95.83%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">Les bases de React</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Meta</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 100%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">Introduction aux conteneurs avec Docker, Kubernetes et OpenShift</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">IBM</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 92%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">Réseaux virtuels dans Azure</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Whizlabs</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 90.41%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">Systèmes d'exploitation : Vue d'ensemble, administration et sécurité</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">IBM</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 92.34%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">Cadre de conformité, normes et réglementations en matière de cybersécurité</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">IBM</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 92.17%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">La recherche documentaire</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">École Polytechnique</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 97%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">Villes africaines: Environnement et enjeux de développement durable</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">École Polytechnique Fédérale de Lausanne</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 96.75%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">L'atelier Unix</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Johns Hopkins University</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 88.45%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">Introduction à HTML5</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">University of Michigan</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 91.57%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">Génie logiciel : conception de logiciels et gestion de projets</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">The Hong Kong University of Science and Technology</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 83.33%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">Introduction à CSS3</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">University of Michigan</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 92.50%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">Mesure et gestion de l'impact pour les ODD</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Duke University</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 92.84%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">La programmation pour tous (commencer en Python)</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">University of Michigan</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 94.86%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">La plateforme Arduino et la programmation en C</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">University of California, Irvine</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 98%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">Introduction aux outils de cybersécurité et aux cyberattaques</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">IBM</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 98.21%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">Interactivité avec JavaScript</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">University of Michigan</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 94.90%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">Fondements de la cybersécurité</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Google</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 94.59%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">HTML, CSS et Javascript pour les développeurs web</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Johns Hopkins University</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 100%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">Le langage de requête structuré (SQL)</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">University of Colorado Boulder</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 97.20%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">Ligne de commande sous Linux</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Coursera Project Network</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 80%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">Introduction à la programmation orientée objet (en C++)</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">École Polytechnique Fédérale de Lausanne</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 95.40%</p>
+          </div>
+
+          <!-- Autres cours terminés -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="check-circle" class="text-green-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">Incident Response and Digital Forensics</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">IBM</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 100%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="check-circle" class="text-green-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">Penetration Testing, Threat Hunting, and Cryptography</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">IBM</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 91.50%</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <div class="flex items-start gap-3 mb-2">
+              <i data-lucide="check-circle" class="text-green-600" style="width:22px;height:22px"></i>
+              <h3 class="font-bold dark:text-white">Computer Networks and Network Security</h3>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">IBM</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 95.54%</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience (simple timeline) -->
+    <section id="experience" class="py-20 px-6 bg-gray-50 dark:bg-gray-900">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 dark:text-white">Expériences <span class="gradient-text">Professionnelles</span></h2>
+        <div class="space-y-6">
+          <!-- Cnexia -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <h3 class="text-xl font-bold dark:text-white">Chargé de la clientèle bilingue (Français / Anglais) — <span class="gradient-text">Cnexia</span></h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Département Prépayement PC Mobile & No Name Mobile — <strong>01/07/2025</strong></p>
+            <ul class="mt-3 list-disc pl-5 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+              <li>Support et accompagnement des clients (français et anglais).</li>
+              <li>Gestion des demandes, réclamations et suivi des services prépayés.</li>
+              <li>Collaboration avec <strong>BEI Canada</strong> pour les services télécoms.</li>
+            </ul>
+          </div>
+
+          <!-- YZY Digital Technologies (AI for SMEs) -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <h3 class="text-xl font-bold dark:text-white">“YZY Digital Technologies” — Stage (Démocratisation des outils IA pour les PME, TPE au Maroc)</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400"><strong>01/07/2025</strong> — Durée : 2 mois</p>
+            <ul class="mt-3 list-disc pl-5 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+              <li>Adaptation d’un modèle de chatbot pour un usage cybersécurité (détection et réponse rapide).</li>
+              <li>Optimisation de la sécurité et de la confidentialité des données.</li>
+              <li>Planning et cahier de charge selon la méthode agile (Scrum).</li>
+              <li>Conception de la logique de <strong>Fine‑Tuning</strong> et traitement de la qualité du DATA.</li>
+              <li>Prototype de chatbot (MVP) avec <strong>RAG + vector DB</strong> (Python, base de données vectorielle).</li>
+              <li>Préparation de DATA + fine tuning du modèle (adaptation au domaine cybersécurité).</li>
+              <li>Optimisation des réponses (qualité, rapidité).</li>
+              <li>Tests utilisateurs internes (validation des résultats).</li>
+            </ul>
+          </div>
+
+          <!-- Smart FIN Consulting (Laravel invoicing app) -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <h3 class="text-xl font-bold dark:text-white">“Smart FIN Consulting” — Stage Full‑stack (Application de gestion de facture “Laravel”)</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400"><strong>01/07/2024</strong> — Durée : 2 mois</p>
+            <ul class="mt-3 list-disc pl-5 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+              <li>Gestion de projet : cadrage et rédaction du cahier de charge avec l’équipe métier (comptabilité).</li>
+              <li>Planification des tâches suivant <strong>Agile/Scrum</strong> sous <strong>Notion</strong>.</li>
+              <li>Conception des diagrammes <strong>UML</strong> (cas d’utilisation / diagramme de classe).</li>
+              <li><strong>Développement</strong> :
+                <ul class="list-disc pl-5 mt-1">
+                  <li>Module gestion des utilisateurs (authentification, rôles, espaces client/comptable).</li>
+                  <li>Module de gestion de la facture (import, facturer, intégration de l’API <strong>Gemini</strong> pour extraction des données).</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <!-- ANRT/INPT observation (network & security) -->
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
+            <h3 class="text-xl font-bold dark:text-white">“ANRT/INPT” — Stage d’observation (Service Réseaux — Responsable infrastructure et sécurité informatique)</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400"><strong>01/08/2022</strong> — Durée : 2 mois</p>
+            <ul class="mt-3 list-disc pl-5 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+              <li>Configuration sécurisée de switches, routeurs et firewalls (PfSense).</li>
+              <li>Utilisation de Linux et Packet Tracer pour la surveillance et la supervision réseau.</li>
+              <li>Participation à un projet de sécurisation réseau (analyses de vulnérabilités, durcissement des accès).</li>
+              <li>Supervision de l’infrastructure réseau et gestion des droits d’accès utilisateurs.</li>
+              <li>Suivi de l’architecture réseau avec une approche défensive, axée sur la prévention des menaces.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery (placeholders) -->
+    <section id="gallery" class="py-20 px-6 bg-white dark:bg-gray-900">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 dark:text-white">Photo <span class="gradient-text">Gallery</span></h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="aspect-square rounded-2xl bg-white dark:bg-gray-800 shadow flex items-center justify-center">
+            <div class="text-center">
+              <i data-lucide="image" class="mx-auto text-gray-400 dark:text-gray-600" style="width:64px;height:64px"></i>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Image placeholder</p>
+            </div>
+          </div>
+          <div class="aspect-square rounded-2xl bg-white dark:bg-gray-800 shadow flex items-center justify-center">
+            <div class="text-center">
+              <i data-lucide="image" class="mx-auto text-gray-400 dark:text-gray-600" style="width:64px;height:64px"></i>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Image placeholder</p>
+            </div>
+          </div>
+          <div class="aspect-square rounded-2xl bg-white dark:bg-gray-800 shadow flex items-center justify-center">
+            <div class="text-center">
+              <i data-lucide="image" class="mx-auto text-gray-400 dark:text-gray-600" style="width:64px;height:64px"></i>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Image placeholder</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 px-6 bg-gray-50 dark:bg-gray-900">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 dark:text-white">Get in <span class="gradient-text">Touch</span></h2>
+        <form action="#" class="max-w-2xl mx-auto grid gap-4">
+          <input required placeholder="Your name" class="px-4 py-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700"/>
+          <input required type="email" placeholder="Your email" class="px-4 py-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700"/>
+          <textarea required rows="5" placeholder="Your message" class="px-4 py-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700"></textarea>
+          <button class="px-6 py-3 rounded-lg text-white bg-gradient-to-r from-blue-500 to-teal-500">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+      <div class="max-w-6xl mx-auto text-center text-gray-600 dark:text-gray-400">© 2025 Ayoub El Kirat. All rights reserved.</div>
+    </footer>
+
+    <script>
+      // Helpers
+      const root = document.documentElement;
+      const setThemeIcon = (isDark) => {
+        const icon = document.getElementById('themeIcon');
+        if (!icon || !window.lucide) return;
+        icon.setAttribute('data-lucide', isDark ? 'moon' : 'sun');
+        window.lucide.createIcons();
+      };
+
+      // Init theme from localStorage
+      const stored = localStorage.getItem('darkMode');
+      const initialDark = stored === 'true';
+      if (initialDark) root.classList.add('dark');
+
+      // Init icons (after potential dark class)
+      window.lucide && window.lucide.createIcons();
+      setThemeIcon(initialDark);
+
+      // Toggle theme + icon
+      document.getElementById('toggleTheme').addEventListener('click', () => {
+        const isDark = root.classList.toggle('dark');
+        localStorage.setItem('darkMode', isDark);
+        setThemeIcon(isDark);
+      });
+
+      // Remove scores from certifications ("Note obtenue : ...")
+      document.querySelectorAll('#certifications p').forEach((el) => {
+        if ((el.textContent || '').trim().toLowerCase().startsWith('note obtenue')) {
+          el.remove();
+        }
+      });
+    </script>
+  </body>
+</html>
