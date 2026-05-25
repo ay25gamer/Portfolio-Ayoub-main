@@ -4,41 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ayoub El Kirat · Portfolio</title>
-   
-    <!-- TailwindCSS CDN (no build needed) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class'
-      }
-    </script>
-    <!-- Lucide icons -->
+    <script>tailwind.config = { darkMode: 'class' }</script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- EmailJS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <style>
-      /* Smooth gradient text helper */
       .gradient-text{background-image:linear-gradient(to right,#3b82f6,#14b8a6);-webkit-background-clip:text;background-clip:text;color:transparent}
     </style>
   </head>
   <body class="bg-white text-gray-900">
+
     <!-- Header -->
     <header id="top" class="fixed inset-x-0 top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/80 dark:bg-gray-900/80 border-b border-gray-200 dark:border-gray-800">
       <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#home" class="text-xl font-bold dark:text-white">Ayoub <span class="gradient-text">El Kirat</span></a>
         <nav class="hidden md:flex items-center gap-6 text-sm">
-          <a href="#education" class="text-gray-900 dark:text-white hover:text-teal-600">Education</a>
-          <a href="#about" class="text-gray-900 dark:text-white hover:text-teal-600">About</a>
-          <a href="#skills" class="text-gray-900 dark:text-white hover:text-teal-600">Skills</a>
-          <a href="#projects" class="text-gray-900 dark:text-white hover:text-teal-600">Projects</a>
-          <a href="#certifications" class="text-gray-900 dark:text-white hover:text-teal-600">Certifications</a>
-          <a href="#experience" class="text-gray-900 dark:text-white hover:text-teal-600">Experience</a>
-          <a href="#gallery" class="text-gray-900 dark:text-white hover:text-teal-600">Gallery</a>
-          <a href="#contact" class="text-gray-900 dark:text-white hover:text-teal-600">Contact</a>
+          <a href="#education" class="text-gray-900 dark:text-white hover:text-teal-600" data-i18n="nav_education">Education</a>
+          <a href="#about" class="text-gray-900 dark:text-white hover:text-teal-600" data-i18n="nav_about">About</a>
+          <a href="#skills" class="text-gray-900 dark:text-white hover:text-teal-600" data-i18n="nav_skills">Skills</a>
+          <a href="#projects" class="text-gray-900 dark:text-white hover:text-teal-600" data-i18n="nav_projects">Projects</a>
+          <a href="#certifications" class="text-gray-900 dark:text-white hover:text-teal-600" data-i18n="nav_certifications">Certifications</a>
+          <a href="#experience" class="text-gray-900 dark:text-white hover:text-teal-600" data-i18n="nav_experience">Experience</a>
+          <a href="#gallery" class="text-gray-900 dark:text-white hover:text-teal-600" data-i18n="nav_gallery">Gallery</a>
+          <a href="#contact" class="text-gray-900 dark:text-white hover:text-teal-600" data-i18n="nav_contact">Contact</a>
         </nav>
-        <button id="toggleTheme" class="p-2 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition" aria-label="Toggle theme">
-          <i id="themeIcon" data-lucide="sun" class="w-5 h-5"></i>
-        </button>
+        <div class="flex items-center gap-2">
+          <button id="langToggle" class="px-3 py-1.5 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition text-sm font-bold dark:text-white" aria-label="Toggle language">FR</button>
+          <button id="toggleTheme" class="p-2 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition" aria-label="Toggle theme">
+            <i id="themeIcon" data-lucide="sun" class="w-5 h-5"></i>
+          </button>
+        </div>
       </div>
     </header>
 
@@ -47,22 +42,18 @@
       <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <div class="space-y-6 text-center md:text-left">
           <h1 class="text-5xl md:text-7xl font-bold dark:text-white">Ayoub <span class="gradient-text">El Kirat</span></h1>
-          <h2 class="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300">Cybersecurity Engineer | Penetration Tester | Full Stack Developer</h2>
-          <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto md:mx-0">I’m a computer science engineer oriented toward cybersecurity and penetration testing, with a strong focus on identifying vulnerabilities and securing digital systems.</p>
+          <h2 class="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300" data-i18n="hero_subtitle">Cybersecurity Engineer | Penetration Tester | Full Stack Developer</h2>
+          <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto md:mx-0" data-i18n="hero_desc">I'm a computer science engineer oriented toward cybersecurity and penetration testing, with a strong focus on identifying vulnerabilities and securing digital systems.</p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-2">
-            <a href="#projects" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg text-white bg-gradient-to-r from-blue-500 to-teal-500 shadow hover:shadow-lg hover:scale-[1.02] transition">View Projects</a>
-            <a href="cv-cybersecurity.pdf" download class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border-2 border-gray-300 bg-white text-gray-900 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 transition">Download CV</a>
+            <a href="#projects" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg text-white bg-gradient-to-r from-blue-500 to-teal-500 shadow hover:shadow-lg hover:scale-[1.02] transition" data-i18n="hero_btn_projects">View Projects</a>
+            <a href="cv-cybersecurity.pdf" download class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border-2 border-gray-300 bg-white text-gray-900 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 transition" data-i18n="hero_btn_cv">Download CV</a>
           </div>
-          
-          <!-- Social Links -->
           <div class="flex gap-4 justify-center md:justify-start pt-4">
             <a href="https://www.linkedin.com/in/ayoub-el-kirat-a8154618a/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 shadow hover:shadow-lg hover:scale-105 transition-all duration-300">
-              <i data-lucide="linkedin" class="w-5 h-5"></i>
-              <span class="font-medium">LinkedIn</span>
+              <i data-lucide="linkedin" class="w-5 h-5"></i><span class="font-medium">LinkedIn</span>
             </a>
             <a href="https://github.com/ay25gamer" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-gray-800 text-white hover:bg-gray-900 shadow hover:shadow-lg hover:scale-105 transition-all duration-300">
-              <i data-lucide="github" class="w-5 h-5"></i>
-              <span class="font-medium">GitHub</span>
+              <i data-lucide="github" class="w-5 h-5"></i><span class="font-medium">GitHub</span>
             </a>
           </div>
         </div>
@@ -77,16 +68,16 @@
     <!-- Education -->
     <section id="education" class="py-20 px-6 bg-gray-50 dark:bg-gray-900">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 dark:text-white">Formations <span class="gradient-text">& Éducation</span></h2>
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 dark:text-white"><span data-i18n="edu_title">Education</span> <span class="gradient-text" data-i18n="edu_title2">&amp; Background</span></h2>
         <div class="space-y-6 max-w-3xl mx-auto">
           <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition flex gap-5 items-start">
             <div class="w-14 h-14 rounded-lg bg-gradient-to-r from-blue-500 to-teal-500 flex items-center justify-center flex-shrink-0">
               <i data-lucide="graduation-cap" class="text-white w-7 h-7"></i>
             </div>
             <div>
-              <h3 class="text-xl font-bold dark:text-white">Cycle Préparatoire & Cycle d'Ingénieur — Cybersécurité & Systèmes Informatiques</h3>
-              <p class="text-teal-600 font-semibold">École Marocaine des Sciences de l'Ingénieur (EMSI) — Rabat</p>
-              <p class="text-sm text-gray-500 dark:text-gray-400">2021 – 2026</p>
+              <h3 class="text-xl font-bold dark:text-white" data-i18n="edu_emsi_degree">Engineering Preparatory Cycle &amp; Engineering Degree — Cybersecurity &amp; Information Systems</h3>
+              <p class="text-teal-600 font-semibold" data-i18n="edu_emsi_school">École Marocaine des Sciences de l'Ingénieur (EMSI) — Rabat</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400" data-i18n="edu_emsi_years">2021 – 2026</p>
             </div>
           </div>
           <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition flex gap-5 items-start">
@@ -94,9 +85,9 @@
               <i data-lucide="book-open" class="text-white w-7 h-7"></i>
             </div>
             <div>
-              <h3 class="text-xl font-bold dark:text-white">Baccalauréat — Sciences Physiques et Chimiques</h3>
-              <p class="text-teal-600 font-semibold">Lycée Al-Ghazali — Temara</p>
-              <p class="text-sm text-gray-500 dark:text-gray-400">2020 – 2021</p>
+              <h3 class="text-xl font-bold dark:text-white" data-i18n="edu_bac_degree">Baccalaureate — Physical and Chemical Sciences</h3>
+              <p class="text-teal-600 font-semibold" data-i18n="edu_bac_school">Al-Ghazali High School — Temara</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400" data-i18n="edu_bac_years">2020 – 2021</p>
             </div>
           </div>
         </div>
@@ -106,22 +97,19 @@
     <!-- About -->
     <section id="about" class="py-20 px-6 bg-gray-50 dark:bg-gray-900">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl md:text-5xl font-bold text-center mb-8 dark:text-white">About <span class="gradient-text">Me</span></h2>
-        <p class="max-w-3xl mx-auto text-center text-gray-600 dark:text-gray-400">I’m a computer science engineer specialized in cybersecurity and penetration testing, focused on identifying vulnerabilities and building resilient, secure systems. My passion lies in understanding how systems can be exploited to better protect them, combining technical expertise with a strategic mindset to strengthen digital defenses. I enjoy working on ethical hacking, network and web application security, and vulnerability assessments, while continuously expanding my knowledge of the latest threats and security techniques. Curious and analytical by nature, I’m dedicated to developing innovative security solutions, collaborating with teams, and contributing to a safer and more reliable cyber world.</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-8 dark:text-white"><span data-i18n="about_title">About</span> <span class="gradient-text" data-i18n="about_title2">Me</span></h2>
+        <p class="max-w-3xl mx-auto text-center text-gray-600 dark:text-gray-400" data-i18n="about_text">I'm a computer science engineer specialized in cybersecurity and penetration testing, focused on identifying vulnerabilities and building resilient, secure systems. My passion lies in understanding how systems can be exploited to better protect them, combining technical expertise with a strategic mindset to strengthen digital defenses. I enjoy working on ethical hacking, network and web application security, and vulnerability assessments, while continuously expanding my knowledge of the latest threats and security techniques. Curious and analytical by nature, I'm dedicated to developing innovative security solutions, collaborating with teams, and contributing to a safer and more reliable cyber world.</p>
       </div>
     </section>
 
     <!-- Skills -->
     <section id="skills" class="py-20 px-6 bg-white dark:bg-gray-900">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 dark:text-white">Technical <span class="gradient-text">Skills</span></h2>
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 dark:text-white"><span data-i18n="skills_title">Technical</span> <span class="gradient-text" data-i18n="skills_title2">Skills</span></h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Programming Languages -->
           <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
-            <div class="w-14 h-14 rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center mb-4">
-              <i data-lucide="code" class="text-white"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-4 dark:text-white">Programming Languages</h3>
+            <div class="w-14 h-14 rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center mb-4"><i data-lucide="code" class="text-white"></i></div>
+            <h3 class="text-xl font-bold mb-4 dark:text-white" data-i18n="skills_prog">Programming Languages</h3>
             <div class="flex flex-wrap gap-2 text-sm">
               <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">C</span>
               <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">C++</span>
@@ -133,13 +121,9 @@
               <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">HTML/CSS</span>
             </div>
           </div>
-
-          <!-- Frameworks & Libraries -->
           <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
-            <div class="w-14 h-14 rounded-lg bg-gradient-to-r from-teal-500 to-teal-600 flex items-center justify-center mb-4">
-              <i data-lucide="wrench" class="text-white"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-4 dark:text-white">Frameworks & Libraries</h3>
+            <div class="w-14 h-14 rounded-lg bg-gradient-to-r from-teal-500 to-teal-600 flex items-center justify-center mb-4"><i data-lucide="wrench" class="text-white"></i></div>
+            <h3 class="text-xl font-bold mb-4 dark:text-white" data-i18n="skills_fw">Frameworks &amp; Libraries</h3>
             <div class="flex flex-wrap gap-2 text-sm">
               <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Django</span>
               <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Laravel</span>
@@ -148,13 +132,9 @@
               <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Bootstrap</span>
             </div>
           </div>
-
-          <!-- Databases & Data -->
           <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
-            <div class="w-14 h-14 rounded-lg bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center mb-4">
-              <i data-lucide="database" class="text-white"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-4 dark:text-white">Databases & Data</h3>
+            <div class="w-14 h-14 rounded-lg bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center mb-4"><i data-lucide="database" class="text-white"></i></div>
+            <h3 class="text-xl font-bold mb-4 dark:text-white" data-i18n="skills_db">Databases &amp; Data</h3>
             <div class="flex flex-wrap gap-2 text-sm">
               <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">MySQL</span>
               <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">PostgreSQL</span>
@@ -165,13 +145,9 @@
               <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">ETL</span>
             </div>
           </div>
-
-          <!-- DevOps & Tools -->
           <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
-            <div class="w-14 h-14 rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 flex items-center justify-center mb-4">
-              <i data-lucide="git-branch" class="text-white"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-4 dark:text-white">DevOps & Tools</h3>
+            <div class="w-14 h-14 rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 flex items-center justify-center mb-4"><i data-lucide="git-branch" class="text-white"></i></div>
+            <h3 class="text-xl font-bold mb-4 dark:text-white" data-i18n="skills_devops">DevOps &amp; Tools</h3>
             <div class="flex flex-wrap gap-2 text-sm">
               <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Git/GitHub</span>
               <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Docker</span>
@@ -182,13 +158,9 @@
               <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Agile/Scrum</span>
             </div>
           </div>
-
-          <!-- Networking & Security -->
           <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
-            <div class="w-14 h-14 rounded-lg bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center mb-4">
-              <i data-lucide="network" class="text-white"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-4 dark:text-white">Networking & Security</h3>
+            <div class="w-14 h-14 rounded-lg bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center mb-4"><i data-lucide="network" class="text-white"></i></div>
+            <h3 class="text-xl font-bold mb-4 dark:text-white" data-i18n="skills_net">Networking &amp; Security</h3>
             <div class="flex flex-wrap gap-2 text-sm">
               <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Cisco</span>
               <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Packet Tracer</span>
@@ -201,32 +173,24 @@
               <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Linux</span>
             </div>
           </div>
-
-          <!-- Cybersecurity -->
           <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
-            <div class="w-14 h-14 rounded-lg bg-gradient-to-r from-red-500 to-red-600 flex items-center justify-center mb-4">
-              <i data-lucide="shield" class="text-white"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-4 dark:text-white">Cybersecurity</h3>
+            <div class="w-14 h-14 rounded-lg bg-gradient-to-r from-red-500 to-red-600 flex items-center justify-center mb-4"><i data-lucide="shield" class="text-white"></i></div>
+            <h3 class="text-xl font-bold mb-4 dark:text-white" data-i18n="skills_cyber">Cybersecurity</h3>
             <div class="flex flex-wrap gap-2 text-sm">
-              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Vulnerability Assessment</span>
-              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Incident Response</span>
-              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Penetration Testing</span>
-              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Security Audits</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300" data-i18n="skill_vuln">Vulnerability Assessment</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300" data-i18n="skill_ir">Incident Response</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300" data-i18n="skill_pentest">Penetration Testing</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300" data-i18n="skill_audit">Security Audits</span>
               <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Web App Security (OWASP)</span>
               <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">HTTPS</span>
-              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Authentication</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300" data-i18n="skill_auth">Authentication</span>
               <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">ISO/IEC 27001</span>
-              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Compliance</span>
+              <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300" data-i18n="skill_compliance">Compliance</span>
             </div>
           </div>
-
-          <!-- Security Tools -->
           <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
-            <div class="w-14 h-14 rounded-lg bg-gradient-to-r from-indigo-500 to-indigo-600 flex items-center justify-center mb-4">
-              <i data-lucide="wrench" class="text-white"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-4 dark:text-white">Security Tools</h3>
+            <div class="w-14 h-14 rounded-lg bg-gradient-to-r from-indigo-500 to-indigo-600 flex items-center justify-center mb-4"><i data-lucide="wrench" class="text-white"></i></div>
+            <h3 class="text-xl font-bold mb-4 dark:text-white" data-i18n="skills_tools">Security Tools</h3>
             <div class="flex flex-wrap gap-2 text-sm">
               <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Wireshark</span>
               <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 dark:text-gray-300">Metasploit</span>
@@ -247,375 +211,112 @@
       </div>
     </section>
 
-    <!-- Projects (placeholder cards to mirror layout) -->
+    <!-- Projects -->
     <section id="projects" class="py-20 px-6 bg-gray-50 dark:bg-gray-900">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 dark:text-white">Featured <span class="gradient-text">Projects</span></h2>
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 dark:text-white"><span data-i18n="proj_title">Featured</span> <span class="gradient-text" data-i18n="proj_title2">Projects</span></h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Security Pipeline OWASP -->
           <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition border-l-4 border-teal-500">
             <div class="flex items-center gap-2 mb-2">
-              <span class="px-3 py-1 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-700 dark:text-teal-300 text-xs font-semibold">Featured</span>
+              <span class="px-3 py-1 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-700 dark:text-teal-300 text-xs font-semibold" data-i18n="proj_featured">Featured</span>
             </div>
-            <h3 class="text-lg font-bold mb-2 dark:text-white">Automated Security Pipeline — OWASP 2025</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">End-to-end offensive security pipeline built at AXA GBS. Covers full recon, multi-tool exploitation (Nuclei, sqlmap, Dalfox, XSStrike, testssl.sh), OWASP engine scanning, CVSS scoring, and automated PDF report generation — all containerized and streaming results live.</p>
+            <h3 class="text-lg font-bold mb-2 dark:text-white" data-i18n="proj_pipeline_title">Automated Security Pipeline — OWASP 2025</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="proj_pipeline_desc">End-to-end offensive security pipeline built at AXA GBS. Covers full recon, multi-tool exploitation (Nuclei, sqlmap, Dalfox, XSStrike, testssl.sh), OWASP engine scanning, CVSS scoring, and automated PDF report generation — all containerized and streaming results live.</p>
             <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">Stack: Docker, Nmap, Nuclei, Katana, ffuf, sqlmap, Dalfox, XSStrike, testssl.sh, Python</p>
           </div>
-
-          <!-- Hospitality Management Application -->
           <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
-            <h3 class="text-lg font-bold mb-2 dark:text-white">Hotel and Restaurant Management Application</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Design and development of a comprehensive management solution covering reservations, service management, and operational tracking, with complete functional and technical modeling.</p>
-            <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">Stack: UML, C++</p>
+            <h3 class="text-lg font-bold mb-2 dark:text-white" data-i18n="proj_hotel_title">Hotel and Restaurant Management Application</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="proj_hotel_desc">Design and development of a comprehensive management solution covering reservations, service management, and operational tracking, with complete functional and technical modeling.</p>
+            <p class="mt-2 text-xs text-gray-500 dark:text-gray-400" data-i18n="proj_hotel_stack">Stack: UML, C++</p>
           </div>
-
-          <!-- Car Rental Web App -->
           <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
-            <h3 class="text-lg font-bold mb-2 dark:text-white">Car Rental Web Application</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Fleet management platform handling reservations, pricing, and payments, featuring responsive user interfaces.</p>
-            <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">Stack: UML, Django, Bootstrap</p>
+            <h3 class="text-lg font-bold mb-2 dark:text-white" data-i18n="proj_car_title">Car Rental Web Application</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="proj_car_desc">Fleet management platform handling reservations, pricing, and payments, featuring responsive user interfaces.</p>
+            <p class="mt-2 text-xs text-gray-500 dark:text-gray-400" data-i18n="proj_car_stack">Stack: UML, Django, Bootstrap</p>
           </div>
-
-          <!-- Notes app - containers -->
           <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
-            <h3 class="text-lg font-bold mb-2 dark:text-white">Toodo-App-Containers (Private)</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Note-taking and personal memory application, containerized for reproducible deployment across different environments.</p>
-            <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">Stack: Docker, Kubernetes, Minikube</p>
+            <h3 class="text-lg font-bold mb-2 dark:text-white" data-i18n="proj_todo_title">Toodo-App-Containers (Private)</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="proj_todo_desc">Note-taking and personal memory application, containerized for reproducible deployment across different environments.</p>
+            <p class="mt-2 text-xs text-gray-500 dark:text-gray-400" data-i18n="proj_todo_stack">Stack: Docker, Kubernetes, Minikube</p>
           </div>
-
-          <!-- E‑commerce site -->
           <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
-            <h3 class="text-lg font-bold mb-2 dark:text-white">E‑Commerce Website</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Development of a high-performance online store with product, order, and content management.</p>
-            <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">Stack: WordPress</p>
+            <h3 class="text-lg font-bold mb-2 dark:text-white" data-i18n="proj_ecom_title">E&#8209;Commerce Website</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="proj_ecom_desc">Development of a high-performance online store with product, order, and content management.</p>
+            <p class="mt-2 text-xs text-gray-500 dark:text-gray-400" data-i18n="proj_ecom_stack">Stack: WordPress</p>
           </div>
-
-          <!-- pfSense firewall lab -->
           <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
-            <h3 class="text-lg font-bold mb-2 dark:text-white">Firewall Lab with pfSense</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Design of a network lab with two VMs (internal/external) and an intermediate pfSense firewall, including rules configuration, NAT, VLANs, and monitoring.</p>
-            <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">Stack: pfSense, Virtualisation</p>
+            <h3 class="text-lg font-bold mb-2 dark:text-white" data-i18n="proj_pfsense_title">Firewall Lab with pfSense</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="proj_pfsense_desc">Design of a network lab with two VMs (internal/external) and an intermediate pfSense firewall, including rules configuration, NAT, VLANs, and monitoring.</p>
+            <p class="mt-2 text-xs text-gray-500 dark:text-gray-400" data-i18n="proj_pfsense_stack">Stack: pfSense, Virtualisation</p>
           </div>
-
-          <!-- Password strength tester -->
           <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
-            <h3 class="text-lg font-bold mb-2 dark:text-white">Password Strength Tester</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Tool for assessing password robustness (entropy, rules, dictionaries) with real-time user feedback.</p>
-            <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">Stack: Python</p>
+            <h3 class="text-lg font-bold mb-2 dark:text-white" data-i18n="proj_pwd_title">Password Strength Tester</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="proj_pwd_desc">Tool for assessing password robustness (entropy, rules, dictionaries) with real-time user feedback.</p>
+            <p class="mt-2 text-xs text-gray-500 dark:text-gray-400" data-i18n="proj_pwd_stack">Stack: Python</p>
           </div>
-
-          <!-- Network analysis -->
           <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition">
-            <h3 class="text-lg font-bold mb-2 dark:text-white">Network Analysis & Mapping</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Host and port scanning and profiling, traffic capture and inspection for diagnostics and hardening.</p>
-            <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">Stack: Nmap, Wireshark</p>
+            <h3 class="text-lg font-bold mb-2 dark:text-white" data-i18n="proj_net_title">Network Analysis &amp; Mapping</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="proj_net_desc">Host and port scanning and profiling, traffic capture and inspection for diagnostics and hardening.</p>
+            <p class="mt-2 text-xs text-gray-500 dark:text-gray-400" data-i18n="proj_net_stack">Stack: Nmap, Wireshark</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Certifications (titles only as requested) -->
+    <!-- Certifications -->
     <section id="certifications" class="py-20 px-6 bg-white dark:bg-gray-900">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 dark:text-white">Certifications <span class="gradient-text">& Courses</span></h2>
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 dark:text-white"><span data-i18n="cert_title">Certifications</span> <span class="gradient-text" data-i18n="cert_title2">&amp; Courses</span></h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Each card: icon, title, org, score -->
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">Introduction à Java et à la programmation orientée objet</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">University of Pennsylvania</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 98.07%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">Essentiels et vulnérabilités des bases de données</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">IBM</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 93.70%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">React Native</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Meta</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 90.50%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">Introduction à Git et GitHub</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Google</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 100%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">Comprendre les normes de sécurité ISO pour votre organisation</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Codio</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 100%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">Introduction aux principes essentiels de cybersécurité</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">IBM</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 95.60%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">Introduction aux carrières en cybersécurité</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">IBM</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 95.83%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">Les bases de React</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Meta</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 100%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">Introduction aux conteneurs avec Docker, Kubernetes et OpenShift</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">IBM</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 92%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">Réseaux virtuels dans Azure</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Whizlabs</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 90.41%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">Systèmes d'exploitation : Vue d'ensemble, administration et sécurité</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">IBM</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 92.34%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">Cadre de conformité, normes et réglementations en matière de cybersécurité</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">IBM</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 92.17%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">La recherche documentaire</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">École Polytechnique</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 97%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">Villes africaines: Environnement et enjeux de développement durable</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">École Polytechnique Fédérale de Lausanne</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 96.75%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">L'atelier Unix</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Johns Hopkins University</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 88.45%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">Introduction à HTML5</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">University of Michigan</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 91.57%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">Génie logiciel : conception de logiciels et gestion de projets</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">The Hong Kong University of Science and Technology</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 83.33%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">Introduction à CSS3</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">University of Michigan</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 92.50%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">Mesure et gestion de l'impact pour les ODD</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Duke University</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 92.84%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">La programmation pour tous (commencer en Python)</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">University of Michigan</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 94.86%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">La plateforme Arduino et la programmation en C</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">University of California, Irvine</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 98%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">Introduction aux outils de cybersécurité et aux cyberattaques</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">IBM</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 98.21%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">Interactivité avec JavaScript</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">University of Michigan</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 94.90%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">Fondements de la cybersécurité</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Google</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 94.59%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">HTML, CSS et Javascript pour les développeurs web</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Johns Hopkins University</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 100%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">Le langage de requête structuré (SQL)</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">University of Colorado Boulder</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 97.20%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">Ligne de commande sous Linux</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Coursera Project Network</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 80%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">Introduction à la programmation orientée objet (en C++)</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">École Polytechnique Fédérale de Lausanne</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 95.40%</p>
-          </div>
-
-          <!-- Autres cours terminés -->
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="check-circle" class="text-green-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">Incident Response and Digital Forensics</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">IBM</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 100%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="check-circle" class="text-green-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">Penetration Testing, Threat Hunting, and Cryptography</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">IBM</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 91.50%</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <div class="flex items-start gap-3 mb-2">
-              <i data-lucide="check-circle" class="text-green-600" style="width:22px;height:22px"></i>
-              <h3 class="font-bold dark:text-white">Computer Networks and Network Security</h3>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">IBM</p>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 95.54%</p>
-          </div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">Introduction à Java et à la programmation orientée objet</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">University of Pennsylvania</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 98.07%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">Essentiels et vulnérabilités des bases de données</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">IBM</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 93.70%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">React Native</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">Meta</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 90.50%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">Introduction à Git et GitHub</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">Google</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 100%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">Comprendre les normes de sécurité ISO pour votre organisation</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">Codio</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 100%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">Introduction aux principes essentiels de cybersécurité</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">IBM</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 95.60%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">Introduction aux carrières en cybersécurité</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">IBM</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 95.83%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">Les bases de React</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">Meta</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 100%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">Introduction aux conteneurs avec Docker, Kubernetes et OpenShift</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">IBM</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 92%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">Réseaux virtuels dans Azure</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">Whizlabs</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 90.41%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">Systèmes d'exploitation : Vue d'ensemble, administration et sécurité</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">IBM</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 92.34%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">Cadre de conformité, normes et réglementations en matière de cybersécurité</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">IBM</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 92.17%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">La recherche documentaire</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">École Polytechnique</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 97%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">Villes africaines: Environnement et enjeux de développement durable</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">École Polytechnique Fédérale de Lausanne</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 96.75%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">L'atelier Unix</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">Johns Hopkins University</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 88.45%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">Introduction à HTML5</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">University of Michigan</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 91.57%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">Génie logiciel : conception de logiciels et gestion de projets</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">The Hong Kong University of Science and Technology</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 83.33%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">Introduction à CSS3</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">University of Michigan</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 92.50%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">Mesure et gestion de l'impact pour les ODD</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">Duke University</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 92.84%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">La programmation pour tous (commencer en Python)</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">University of Michigan</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 94.86%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">La plateforme Arduino et la programmation en C</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">University of California, Irvine</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 98%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">Introduction aux outils de cybersécurité et aux cyberattaques</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">IBM</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 98.21%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">Interactivité avec JavaScript</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">University of Michigan</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 94.90%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">Fondements de la cybersécurité</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">Google</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 94.59%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">HTML, CSS et Javascript pour les développeurs web</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">Johns Hopkins University</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 100%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">Le langage de requête structuré (SQL)</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">University of Colorado Boulder</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 97.20%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">Ligne de commande sous Linux</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">Coursera Project Network</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 80%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="award" class="text-teal-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">Introduction à la programmation orientée objet (en C++)</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">École Polytechnique Fédérale de Lausanne</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 95.40%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="check-circle" class="text-green-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">Incident Response and Digital Forensics</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">IBM</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 100%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="check-circle" class="text-green-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">Penetration Testing, Threat Hunting, and Cryptography</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">IBM</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 91.50%</p></div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow"><div class="flex items-start gap-3 mb-2"><i data-lucide="check-circle" class="text-green-600" style="width:22px;height:22px"></i><h3 class="font-bold dark:text-white">Computer Networks and Network Security</h3></div><p class="text-sm text-gray-600 dark:text-gray-400">IBM</p><p class="text-xs text-gray-500 dark:text-gray-400">Note obtenue : 95.54%</p></div>
         </div>
       </div>
     </section>
 
-    <!-- Experience (simple timeline) -->
+    <!-- Experience -->
     <section id="experience" class="py-20 px-6 bg-gray-50 dark:bg-gray-900">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 dark:text-white">Expériences <span class="gradient-text">Professionnelles</span></h2>
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 dark:text-white"><span data-i18n="exp_title">Professional</span> <span class="gradient-text" data-i18n="exp_title2">Experience</span></h2>
         <div class="space-y-6">
+
           <!-- AXA GBS -->
           <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow border-l-4 border-teal-500">
             <div class="flex items-center gap-2 mb-1">
-              <span class="px-3 py-1 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-700 dark:text-teal-300 text-xs font-semibold">Most Recent</span>
+              <span class="px-3 py-1 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-700 dark:text-teal-300 text-xs font-semibold" data-i18n="exp_most_recent">Most Recent</span>
             </div>
-            <h3 class="text-xl font-bold dark:text-white">Internship · <span class="gradient-text">AXA GBS (Global Business Services)</span> — Automated Vulnerability Exploitation Pipeline</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400"><strong>12/02/2026</strong> — Duration: 6 months</p>
-            <ul class="mt-3 list-disc pl-5 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+            <h3 class="text-xl font-bold dark:text-white"><span data-i18n="exp_type_internship">Internship</span> · <span class="gradient-text">AXA GBS (Global Business Services)</span> — <span data-i18n="exp_axa_role">Automated Vulnerability Exploitation Pipeline</span></h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="exp_axa_date">12/02/2026 — Duration: 6 months</p>
+            <ul class="mt-3 list-disc pl-5 space-y-1 text-sm text-gray-700 dark:text-gray-300" data-i18n-html="exp_axa_bullets">
               <li>Designed and developed an automated <strong>Security Pipeline (OWASP 2025)</strong> containerized under Docker.</li>
               <li><strong>Discovery Phase:</strong> automated endpoint crawling, JS-linked URLs and deep reconnaissance with <strong>Katana</strong>.</li>
               <li><strong>CLI Toolchain Phase:</strong> orchestrated automated execution of <strong>Nmap, Nuclei, ffuf, sqlmap, Dalfox, XSStrike, testssl.sh</strong> with live streaming.</li>
@@ -628,20 +329,20 @@
 
           <!-- Cnexia -->
           <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <h3 class="text-xl font-bold dark:text-white">CDI · <span class="gradient-text">Cnexia</span> — Bilingual Client Support Specialist (French / English)</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Prepaid PC Mobile & No Name Mobile Department — <strong>01/07/2025</strong></p>
-            <ul class="mt-3 list-disc pl-5 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+            <h3 class="text-xl font-bold dark:text-white"><span data-i18n="exp_type_cdi">CDI</span> · <span class="gradient-text">Cnexia</span> — <span data-i18n="exp_cnexia_role">Bilingual Client Support Specialist (French / English)</span></h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="exp_cnexia_dept">Prepaid PC Mobile &amp; No Name Mobile Department — 01/07/2025</p>
+            <ul class="mt-3 list-disc pl-5 space-y-1 text-sm text-gray-700 dark:text-gray-300" data-i18n-html="exp_cnexia_bullets">
               <li>Provided support and guidance to clients in both French and English.</li>
               <li>Managed requests, complaints, and prepaid service follow-ups.</li>
               <li>Collaborated with <strong>BELL Canada</strong> on telecom services.</li>
             </ul>
           </div>
 
-          <!-- YZY Digital Technologies (AI for SMEs) -->
+          <!-- YZY Digital Technologies -->
           <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <h3 class=”text-xl font-bold dark:text-white”>Internship · <span class=”gradient-text”>YZY Digital Technologies</span> — Democratizing AI Tools for SMEs in Morocco</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400"><strong>01/07/2025</strong> — Duration: 2 months</p>
-            <ul class="mt-3 list-disc pl-5 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+            <h3 class="text-xl font-bold dark:text-white"><span data-i18n="exp_type_internship">Internship</span> · <span class="gradient-text">YZY Digital Technologies</span> — <span data-i18n="exp_yzy_role">Democratizing AI Tools for SMEs in Morocco</span></h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="exp_yzy_date">01/07/2025 — Duration: 2 months</p>
+            <ul class="mt-3 list-disc pl-5 space-y-1 text-sm text-gray-700 dark:text-gray-300" data-i18n-html="exp_yzy_bullets">
               <li>Adapted a chatbot model for cybersecurity purposes (rapid detection and response).</li>
               <li>Optimized data security and privacy.</li>
               <li>Planned and wrote specifications using Agile/Scrum methodology.</li>
@@ -653,29 +354,24 @@
             </ul>
           </div>
 
-          <!-- Smart FIN Consulting (Laravel invoicing app) -->
+          <!-- Smart FIN Consulting -->
           <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <h3 class=”text-xl font-bold dark:text-white”>Internship · <span class=”gradient-text”>Smart FIN Consulting</span> — Full-Stack Invoice Management Application (Laravel)</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400"><strong>01/07/2024</strong> — Duration: 2 months</p>
-            <ul class="mt-3 list-disc pl-5 space-y-1 text-sm text-gray-700 dark:text-gray-300">
-              <li><strong >Project management:</strong></li>
-              <li>defined project scope and wrote specifications with the business team (accounting).</li>
+            <h3 class="text-xl font-bold dark:text-white"><span data-i18n="exp_type_internship">Internship</span> · <span class="gradient-text">Smart FIN Consulting</span> — <span data-i18n="exp_smart_role">Full-Stack Invoice Management Application (Laravel)</span></h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="exp_smart_date">01/07/2024 — Duration: 2 months</p>
+            <ul class="mt-3 list-disc pl-5 space-y-1 text-sm text-gray-700 dark:text-gray-300" data-i18n-html="exp_smart_bullets">
+              <li><strong>Project management:</strong></li>
+              <li>Defined project scope and wrote specifications with the business team (accounting).</li>
               <li>Planned tasks using <strong>Agile/Scrum</strong> in <strong>Notion</strong>.</li>
               <li>Designed <strong>UML</strong> diagrams (use case / class diagrams).</li>
-              <li><strong>Development</strong> :
-                <ul class="list-disc pl-5 mt-1">
-                  <li>User management module (authentication, roles, client/accountant spaces).</li>
-                  <li>Invoice management module (importing, invoicing, integration of <strong>Gemini</strong> API for data extraction). </li>
-                </ul>
-              </li>
+              <li><strong>Development:</strong><ul class="list-disc pl-5 mt-1"><li>User management module (authentication, roles, client/accountant spaces).</li><li>Invoice management module (importing, invoicing, integration of <strong>Gemini</strong> API for data extraction).</li></ul></li>
             </ul>
           </div>
 
-          <!-- ANRT/INPT observation (network & security) -->
+          <!-- ANRT/INPT -->
           <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow">
-            <h3 class=”text-xl font-bold dark:text-white”>Internship · <span class=”gradient-text”>ANRT / INPT</span> — Networks Department, Infrastructure & IT Security</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400"><strong>01/08/2022</strong> — Duration: 2 months</p>
-            <ul class="mt-3 list-disc pl-5 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+            <h3 class="text-xl font-bold dark:text-white"><span data-i18n="exp_type_internship">Internship</span> · <span class="gradient-text">ANRT / INPT</span> — <span data-i18n="exp_anrt_role">Networks Department, Infrastructure &amp; IT Security</span></h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="exp_anrt_date">01/08/2022 — Duration: 2 months</p>
+            <ul class="mt-3 list-disc pl-5 space-y-1 text-sm text-gray-700 dark:text-gray-300" data-i18n-html="exp_anrt_bullets">
               <li>Configured switches, routers, and firewalls (pfSense) securely.</li>
               <li>Used Linux and Packet Tracer for network monitoring and supervision.</li>
               <li>Participated in a network security project (vulnerability analysis, access hardening).</li>
@@ -683,114 +379,278 @@
               <li>Followed a defensive approach to network architecture, focused on threat prevention.</li>
             </ul>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Gallery (placeholders) -->
+    <!-- Gallery -->
     <section id="gallery" class="py-20 px-6 bg-white dark:bg-gray-900">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 dark:text-white">Photo <span class="gradient-text">Gallery</span></h2>
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 dark:text-white"><span data-i18n="gallery_title">Photo</span> <span class="gradient-text" data-i18n="gallery_title2">Gallery</span></h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="aspect-square rounded-2xl bg-white dark:bg-gray-800 shadow flex items-center justify-center cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105" onclick="openModal('img0.png')">
-            <div class="text-center">
-              <img src="img0.png" class="w-full h-full object-cover rounded-2xl"/>
-            </div>
-          </div>
-          <div class="aspect-square rounded-2xl bg-white dark:bg-gray-800 shadow flex items-center justify-center cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105" onclick="openModal('img2.png')">
-            <div class="text-center">
-             <img src="img2.png" class="w-full h-full object-cover rounded-2xl"/>
-            </div>
-          </div>
-          <div class="aspect-square rounded-2xl bg-white dark:bg-gray-800 shadow flex items-center justify-center cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105" onclick="openModal('img3.png')">
-            <div class="text-center">
-              <img src="img3.png" class="w-full h-full object-cover rounded-2xl"/>
-            </div>
-          </div>
-          <div class="aspect-square rounded-2xl bg-white dark:bg-gray-800 shadow flex items-center justify-center cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105" onclick="openModal('img4.png')">
-            <div class="text-center">
-              <img src="img4.png" class="w-full h-full object-cover rounded-2xl"/>
-            </div>
-          </div>
+          <div class="aspect-square rounded-2xl bg-white dark:bg-gray-800 shadow flex items-center justify-center cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105" onclick="openModal('img0.png')"><img src="img0.png" class="w-full h-full object-cover rounded-2xl"/></div>
+          <div class="aspect-square rounded-2xl bg-white dark:bg-gray-800 shadow flex items-center justify-center cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105" onclick="openModal('img2.png')"><img src="img2.png" class="w-full h-full object-cover rounded-2xl"/></div>
+          <div class="aspect-square rounded-2xl bg-white dark:bg-gray-800 shadow flex items-center justify-center cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105" onclick="openModal('img3.png')"><img src="img3.png" class="w-full h-full object-cover rounded-2xl"/></div>
+          <div class="aspect-square rounded-2xl bg-white dark:bg-gray-800 shadow flex items-center justify-center cursor-pointer hover:shadow-2xl transition-all duration-300 hover:scale-105" onclick="openModal('img4.png')"><img src="img4.png" class="w-full h-full object-cover rounded-2xl"/></div>
         </div>
       </div>
     </section>
 
-    <!-- Modal for image gallery -->
+    <!-- Modal -->
     <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center p-4">
       <div class="relative max-w-4xl max-h-full">
-        <button id="closeModal" class="absolute -top-12 right-0 text-white text-4xl hover:text-gray-300 transition-colors" aria-label="Fermer">
-          <i data-lucide="x" class="w-8 h-8"></i>
-        </button>
-        <img id="modalImage" src="" alt="Image agrandie" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl">
+        <button id="closeModal" class="absolute -top-12 right-0 text-white text-4xl hover:text-gray-300 transition-colors" aria-label="Close"><i data-lucide="x" class="w-8 h-8"></i></button>
+        <img id="modalImage" src="" alt="Image" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl">
         <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-center">
-          <p class="text-sm opacity-75">Cliquez en dehors de l'image ou sur la croix pour fermer</p>
+          <p class="text-sm opacity-75" data-i18n="modal_hint">Click outside or on X to close</p>
         </div>
       </div>
     </div>
 
     <!-- Languages -->
-    <section id="languages" class="py-16 px-6 bg-white dark:bg-gray-900">
+    <section id="languages" class="py-16 px-6 bg-gray-50 dark:bg-gray-900">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl md:text-5xl font-bold text-center mb-10 dark:text-white">Langues <span class="gradient-text">& Communication</span></h2>
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-10 dark:text-white"><span data-i18n="lang_title">Languages</span> <span class="gradient-text" data-i18n="lang_title2">&amp; Communication</span></h2>
         <div class="flex flex-wrap justify-center gap-6">
           <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition text-center w-48">
             <div class="text-4xl mb-2">🇲🇦</div>
-            <h3 class="text-lg font-bold dark:text-white">Arabe</h3>
-            <span class="inline-block mt-1 px-3 py-1 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-700 dark:text-teal-300 text-sm font-semibold">C2 — Natif</span>
+            <h3 class="text-lg font-bold dark:text-white" data-i18n="lang_arabic">Arabic</h3>
+            <span class="inline-block mt-1 px-3 py-1 rounded-full bg-teal-100 dark:bg-teal-900 text-teal-700 dark:text-teal-300 text-sm font-semibold" data-i18n="lang_arabic_level">C2 — Native</span>
           </div>
           <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition text-center w-48">
             <div class="text-4xl mb-2">🇬🇧</div>
-            <h3 class="text-lg font-bold dark:text-white">Anglais</h3>
-            <span class="inline-block mt-1 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-sm font-semibold">B2 — Avancé</span>
+            <h3 class="text-lg font-bold dark:text-white" data-i18n="lang_english">English</h3>
+            <span class="inline-block mt-1 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-sm font-semibold" data-i18n="lang_english_level">B2 — Advanced</span>
           </div>
           <div class="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow hover:shadow-2xl transition text-center w-48">
             <div class="text-4xl mb-2">🇫🇷</div>
-            <h3 class="text-lg font-bold dark:text-white">Français</h3>
-            <span class="inline-block mt-1 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-sm font-semibold">B2 — Avancé</span>
+            <h3 class="text-lg font-bold dark:text-white" data-i18n="lang_french">French</h3>
+            <span class="inline-block mt-1 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-sm font-semibold" data-i18n="lang_french_level">B2 — Advanced</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="py-20 px-6 bg-gray-50 dark:bg-gray-900">
+    <section id="contact" class="py-20 px-6 bg-white dark:bg-gray-900">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 dark:text-white">Get in <span class="gradient-text">Touch</span></h2>
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 dark:text-white"><span data-i18n="contact_title">Get in</span> <span class="gradient-text" data-i18n="contact_title2">Touch</span></h2>
         <form id="contactForm" class="max-w-2xl mx-auto grid gap-4">
-          <input id="from_name" name="from_name" required placeholder="Votre nom" class="px-4 py-3 rounded-lg bg-white dark:bg-gray-100 border border-gray-300 dark:border-gray-400 text-gray-900 dark:text-gray-900 placeholder-gray-500 dark:placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"/>
-          <input id="from_email" name="from_email" type="email" required placeholder="Votre email" class="px-4 py-3 rounded-lg bg-white dark:bg-gray-100 border border-gray-300 dark:border-gray-400 text-gray-900 dark:text-gray-900 placeholder-gray-500 dark:placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"/>
-          <textarea id="message" name="message" required rows="5" placeholder="Votre message" class="px-4 py-3 rounded-lg bg-white dark:bg-gray-100 border border-gray-300 dark:border-gray-400 text-gray-900 dark:text-gray-900 placeholder-gray-500 dark:placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"></textarea>
+          <input id="from_name" name="from_name" required data-i18n-placeholder="contact_ph_name" placeholder="Your name" class="px-4 py-3 rounded-lg bg-white dark:bg-gray-100 border border-gray-300 dark:border-gray-400 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+          <input id="from_email" name="from_email" type="email" required data-i18n-placeholder="contact_ph_email" placeholder="Your email" class="px-4 py-3 rounded-lg bg-white dark:bg-gray-100 border border-gray-300 dark:border-gray-400 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+          <textarea id="message" name="message" required rows="5" data-i18n-placeholder="contact_ph_msg" placeholder="Your message" class="px-4 py-3 rounded-lg bg-white dark:bg-gray-100 border border-gray-300 dark:border-gray-400 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
           <button type="submit" id="submitBtn" class="px-6 py-3 rounded-lg text-white bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
-            <span id="btnText">Envoyer le message</span>
-            <span id="btnLoading" class="hidden">Envoi en cours...</span>
+            <span id="btnText" data-i18n="contact_btn">Send message</span>
+            <span id="btnLoading" class="hidden" data-i18n="contact_btn_loading">Sending...</span>
           </button>
         </form>
-        
-        <!-- Success/Error Messages -->
         <div id="successMessage" class="hidden max-w-2xl mx-auto mt-4 p-4 bg-green-100 dark:bg-green-900 border border-green-400 text-green-700 dark:text-green-300 rounded-lg">
-          <div class="flex items-center">
-            <i data-lucide="check-circle" class="w-5 h-5 mr-2"></i>
-            <span>Message envoyé avec succès ! Je vous répondrai bientôt.</span>
-          </div>
+          <div class="flex items-center"><i data-lucide="check-circle" class="w-5 h-5 mr-2"></i><span data-i18n="contact_success">Message sent successfully! I'll get back to you soon.</span></div>
         </div>
-        
         <div id="errorMessage" class="hidden max-w-2xl mx-auto mt-4 p-4 bg-red-100 dark:bg-red-900 border border-red-400 text-red-700 dark:text-red-300 rounded-lg">
-          <div class="flex items-center">
-            <i data-lucide="alert-circle" class="w-5 h-5 mr-2"></i>
-            <span id="errorText">Erreur lors de l'envoi du message. Veuillez réessayer.</span>
-          </div>
+          <div class="flex items-center"><i data-lucide="alert-circle" class="w-5 h-5 mr-2"></i><span id="errorText" data-i18n="contact_error">Error sending message. Please try again or contact me directly at ayoubelkirat@gmail.com</span></div>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
     <footer class="py-8 px-6 bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
-      <div class="max-w-6xl mx-auto text-center text-gray-600 dark:text-gray-400">© 2025 Ayoub El Kirat. All rights reserved.</div>
+      <div class="max-w-6xl mx-auto text-center text-gray-600 dark:text-gray-400" data-i18n="footer">© 2025 Ayoub El Kirat. All rights reserved.</div>
     </footer>
 
     <script>
-      // Helpers
+      // ── i18n translations ──────────────────────────────────────────────────
+      const translations = {
+        en: {
+          nav_education:'Education', nav_about:'About', nav_skills:'Skills',
+          nav_projects:'Projects', nav_certifications:'Certifications',
+          nav_experience:'Experience', nav_gallery:'Gallery', nav_contact:'Contact',
+          hero_subtitle:'Cybersecurity Engineer | Penetration Tester | Full Stack Developer',
+          hero_desc:"I'm a computer science engineer oriented toward cybersecurity and penetration testing, with a strong focus on identifying vulnerabilities and securing digital systems.",
+          hero_btn_projects:'View Projects', hero_btn_cv:'Download CV',
+          edu_title:'Education', edu_title2:'& Background',
+          edu_emsi_degree:'Engineering Preparatory Cycle & Engineering Degree — Cybersecurity & Information Systems',
+          edu_emsi_school:"École Marocaine des Sciences de l'Ingénieur (EMSI) — Rabat",
+          edu_emsi_years:'2021 – 2026',
+          edu_bac_degree:'Baccalaureate — Physical and Chemical Sciences',
+          edu_bac_school:'Al-Ghazali High School — Temara',
+          edu_bac_years:'2020 – 2021',
+          about_title:'About', about_title2:'Me',
+          about_text:"I'm a computer science engineer specialized in cybersecurity and penetration testing, focused on identifying vulnerabilities and building resilient, secure systems. My passion lies in understanding how systems can be exploited to better protect them, combining technical expertise with a strategic mindset to strengthen digital defenses. I enjoy working on ethical hacking, network and web application security, and vulnerability assessments, while continuously expanding my knowledge of the latest threats and security techniques. Curious and analytical by nature, I'm dedicated to developing innovative security solutions, collaborating with teams, and contributing to a safer and more reliable cyber world.",
+          skills_title:'Technical', skills_title2:'Skills',
+          skills_prog:'Programming Languages', skills_fw:'Frameworks & Libraries',
+          skills_db:'Databases & Data', skills_devops:'DevOps & Tools',
+          skills_net:'Networking & Security', skills_cyber:'Cybersecurity',
+          skills_tools:'Security Tools',
+          skill_vuln:'Vulnerability Assessment', skill_ir:'Incident Response',
+          skill_pentest:'Penetration Testing', skill_audit:'Security Audits',
+          skill_auth:'Authentication', skill_compliance:'Compliance',
+          proj_title:'Featured', proj_title2:'Projects', proj_featured:'Featured',
+          proj_pipeline_title:'Automated Security Pipeline — OWASP 2025',
+          proj_pipeline_desc:'End-to-end offensive security pipeline built at AXA GBS. Covers full recon, multi-tool exploitation (Nuclei, sqlmap, Dalfox, XSStrike, testssl.sh), OWASP engine scanning, CVSS scoring, and automated PDF report generation — all containerized and streaming results live.',
+          proj_hotel_title:'Hotel and Restaurant Management Application',
+          proj_hotel_desc:'Design and development of a comprehensive management solution covering reservations, service management, and operational tracking, with complete functional and technical modeling.',
+          proj_hotel_stack:'Stack: UML, C++',
+          proj_car_title:'Car Rental Web Application',
+          proj_car_desc:'Fleet management platform handling reservations, pricing, and payments, featuring responsive user interfaces.',
+          proj_car_stack:'Stack: UML, Django, Bootstrap',
+          proj_todo_title:'Toodo-App-Containers (Private)',
+          proj_todo_desc:'Note-taking and personal memory application, containerized for reproducible deployment across different environments.',
+          proj_todo_stack:'Stack: Docker, Kubernetes, Minikube',
+          proj_ecom_title:'E‑Commerce Website',
+          proj_ecom_desc:'Development of a high-performance online store with product, order, and content management.',
+          proj_ecom_stack:'Stack: WordPress',
+          proj_pfsense_title:'Firewall Lab with pfSense',
+          proj_pfsense_desc:'Design of a network lab with two VMs (internal/external) and an intermediate pfSense firewall, including rules configuration, NAT, VLANs, and monitoring.',
+          proj_pfsense_stack:'Stack: pfSense, Virtualisation',
+          proj_pwd_title:'Password Strength Tester',
+          proj_pwd_desc:'Tool for assessing password robustness (entropy, rules, dictionaries) with real-time user feedback.',
+          proj_pwd_stack:'Stack: Python',
+          proj_net_title:'Network Analysis & Mapping',
+          proj_net_desc:'Host and port scanning and profiling, traffic capture and inspection for diagnostics and hardening.',
+          proj_net_stack:'Stack: Nmap, Wireshark',
+          cert_title:'Certifications', cert_title2:'& Courses',
+          exp_title:'Professional', exp_title2:'Experience',
+          exp_most_recent:'Most Recent',
+          exp_type_internship:'Internship', exp_type_cdi:'CDI',
+          exp_axa_role:'Automated Vulnerability Exploitation Pipeline',
+          exp_axa_date:'12/02/2026 — Duration: 6 months',
+          exp_axa_bullets:`<li>Designed and developed an automated <strong>Security Pipeline (OWASP 2025)</strong> containerized under Docker.</li><li><strong>Discovery Phase:</strong> automated endpoint crawling, JS-linked URLs and deep reconnaissance with <strong>Katana</strong>.</li><li><strong>CLI Toolchain Phase:</strong> orchestrated automated execution of <strong>Nmap, Nuclei, ffuf, sqlmap, Dalfox, XSStrike, testssl.sh</strong> with live streaming.</li><li><strong>OWASP Engine Phase:</strong> Burp-style insertion scanner + OWASP catalogue (crypto, auth, injection, SSRF, logging…).</li><li><strong>Report Phase:</strong> findings aggregation, CVSS scoring, remediation recommendations and automated PDF export.</li><li>Wrote security reports and performed risk audits.</li><li>Deployed and managed the containerized environment (Docker).</li>`,
+          exp_cnexia_role:'Bilingual Client Support Specialist (French / English)',
+          exp_cnexia_dept:'Prepaid PC Mobile & No Name Mobile Department — 01/07/2025',
+          exp_cnexia_bullets:`<li>Provided support and guidance to clients in both French and English.</li><li>Managed requests, complaints, and prepaid service follow-ups.</li><li>Collaborated with <strong>BELL Canada</strong> on telecom services.</li>`,
+          exp_yzy_role:'Democratizing AI Tools for SMEs in Morocco',
+          exp_yzy_date:'01/07/2025 — Duration: 2 months',
+          exp_yzy_bullets:`<li>Adapted a chatbot model for cybersecurity purposes (rapid detection and response).</li><li>Optimized data security and privacy.</li><li>Planned and wrote specifications using Agile/Scrum methodology.</li><li>Designed <strong>Fine-Tuning</strong> logic and data quality processing.</li><li>Developed a chatbot prototype (MVP) with <strong>RAG + vector database</strong> (Python, vector DB).</li><li>Prepared data and fine-tuned the model for cybersecurity domain adaptation.</li><li>Optimized responses for quality and speed.</li><li>Conducted internal user testing to validate results.</li>`,
+          exp_smart_role:'Full-Stack Invoice Management Application (Laravel)',
+          exp_smart_date:'01/07/2024 — Duration: 2 months',
+          exp_smart_bullets:`<li><strong>Project management:</strong></li><li>Defined project scope and wrote specifications with the business team (accounting).</li><li>Planned tasks using <strong>Agile/Scrum</strong> in <strong>Notion</strong>.</li><li>Designed <strong>UML</strong> diagrams (use case / class diagrams).</li><li><strong>Development:</strong><ul class="list-disc pl-5 mt-1"><li>User management module (authentication, roles, client/accountant spaces).</li><li>Invoice management module (importing, invoicing, integration of <strong>Gemini</strong> API for data extraction).</li></ul></li>`,
+          exp_anrt_role:'Networks Department, Infrastructure & IT Security',
+          exp_anrt_date:'01/08/2022 — Duration: 2 months',
+          exp_anrt_bullets:`<li>Configured switches, routers, and firewalls (pfSense) securely.</li><li>Used Linux and Packet Tracer for network monitoring and supervision.</li><li>Participated in a network security project (vulnerability analysis, access hardening).</li><li>Supervised network infrastructure and user access rights management.</li><li>Followed a defensive approach to network architecture, focused on threat prevention.</li>`,
+          gallery_title:'Photo', gallery_title2:'Gallery',
+          lang_title:'Languages', lang_title2:'& Communication',
+          lang_arabic:'Arabic', lang_arabic_level:'C2 — Native',
+          lang_english:'English', lang_english_level:'B2 — Advanced',
+          lang_french:'French', lang_french_level:'B2 — Advanced',
+          contact_title:'Get in', contact_title2:'Touch',
+          contact_ph_name:'Your name', contact_ph_email:'Your email', contact_ph_msg:'Your message',
+          contact_btn:'Send message', contact_btn_loading:'Sending...',
+          contact_success:"Message sent successfully! I'll get back to you soon.",
+          contact_error:'Error sending message. Please try again or contact me directly at ayoubelkirat@gmail.com',
+          modal_hint:'Click outside or on X to close',
+          footer:'© 2025 Ayoub El Kirat. All rights reserved.'
+        },
+        fr: {
+          nav_education:'Formation', nav_about:'À propos', nav_skills:'Compétences',
+          nav_projects:'Projets', nav_certifications:'Certifications',
+          nav_experience:'Expériences', nav_gallery:'Galerie', nav_contact:'Contact',
+          hero_subtitle:'Ingénieur en Cybersécurité | Pentesteur | Développeur Full Stack',
+          hero_desc:"Ingénieur en informatique spécialisé en cybersécurité et tests d'intrusion, passionné par la sécurité des réseaux, l'identification des vulnérabilités et la protection des systèmes numériques.",
+          hero_btn_projects:'Voir les projets', hero_btn_cv:'Télécharger CV',
+          edu_title:'Formations', edu_title2:'& Éducation',
+          edu_emsi_degree:"Cycle Préparatoire & Cycle d'Ingénieur — Cybersécurité & Systèmes Informatiques",
+          edu_emsi_school:"École Marocaine des Sciences de l'Ingénieur (EMSI) — Rabat",
+          edu_emsi_years:'2021 – 2026',
+          edu_bac_degree:'Baccalauréat — Sciences Physiques et Chimiques',
+          edu_bac_school:'Lycée Al-Ghazali — Temara',
+          edu_bac_years:'2020 – 2021',
+          about_title:'À propos', about_title2:'de moi',
+          about_text:"Je suis ingénieur en informatique spécialisé en cybersécurité et tests d'intrusion, axé sur l'identification des vulnérabilités et la construction de systèmes résilients et sécurisés. Ma passion réside dans la compréhension des méthodes d'exploitation pour mieux protéger les systèmes, en combinant expertise technique et vision stratégique pour renforcer les défenses numériques. Je travaille sur le hacking éthique, la sécurité des réseaux et des applications web, tout en élargissant continuellement mes connaissances sur les dernières menaces et techniques de sécurité.",
+          skills_title:'Compétences', skills_title2:'Techniques',
+          skills_prog:'Langages de Programmation', skills_fw:'Frameworks & Bibliothèques',
+          skills_db:'Bases de Données', skills_devops:'DevOps & Outils',
+          skills_net:'Réseaux & Sécurité', skills_cyber:'Cybersécurité',
+          skills_tools:'Outils de Sécurité',
+          skill_vuln:'Analyse de Vulnérabilités', skill_ir:'Réponse aux Incidents',
+          skill_pentest:'Tests d\'Intrusion', skill_audit:'Audits de Sécurité',
+          skill_auth:'Authentification', skill_compliance:'Conformité',
+          proj_title:'Projets', proj_title2:'Phares', proj_featured:'À la une',
+          proj_pipeline_title:'Pipeline de Sécurité Automatisé — OWASP 2025',
+          proj_pipeline_desc:"Pipeline offensif de bout en bout développé chez AXA GBS. Couvre la reconnaissance complète, l'exploitation multi-outils (Nuclei, sqlmap, Dalfox, XSStrike, testssl.sh), le scan OWASP, le scoring CVSS et la génération automatique de rapports PDF — le tout conteneurisé avec streaming en direct.",
+          proj_hotel_title:'Application de Gestion Hôtelière et de Restauration',
+          proj_hotel_desc:'Conception et développement d\'une solution de gestion complète couvrant les réservations, la gestion des services et le suivi opérationnel, avec une modélisation fonctionnelle et technique complète.',
+          proj_hotel_stack:'Stack : UML, C++',
+          proj_car_title:'Application Web de Location de Voitures',
+          proj_car_desc:'Plateforme de gestion de flotte gérant les réservations, la tarification et les paiements, avec des interfaces utilisateur responsives.',
+          proj_car_stack:'Stack : UML, Django, Bootstrap',
+          proj_todo_title:'Toodo-App-Containers (Privé)',
+          proj_todo_desc:'Application de prise de notes et de mémoire personnelle, conteneurisée pour un déploiement reproductible dans différents environnements.',
+          proj_todo_stack:'Stack : Docker, Kubernetes, Minikube',
+          proj_ecom_title:'Site E‑Commerce',
+          proj_ecom_desc:'Développement d\'une boutique en ligne performante avec gestion des produits, commandes et contenus.',
+          proj_ecom_stack:'Stack : WordPress',
+          proj_pfsense_title:'Lab Firewall avec pfSense',
+          proj_pfsense_desc:'Conception d\'un lab réseau avec deux VMs (interne/externe) et un pare-feu pfSense intermédiaire, incluant la configuration des règles, NAT, VLANs et supervision.',
+          proj_pfsense_stack:'Stack : pfSense, Virtualisation',
+          proj_pwd_title:'Testeur de Robustesse de Mot de Passe',
+          proj_pwd_desc:'Outil d\'évaluation de la robustesse des mots de passe (entropie, règles, dictionnaires) avec retour utilisateur en temps réel.',
+          proj_pwd_stack:'Stack : Python',
+          proj_net_title:'Analyse et Cartographie Réseau',
+          proj_net_desc:'Scan et profilage des hôtes et ports, capture et inspection du trafic pour diagnostics et durcissement.',
+          proj_net_stack:'Stack : Nmap, Wireshark',
+          cert_title:'Certifications', cert_title2:'& Cours',
+          exp_title:'Expériences', exp_title2:'Professionnelles',
+          exp_most_recent:'Le plus récent',
+          exp_type_internship:'Stage', exp_type_cdi:'CDI',
+          exp_axa_role:"Automatisation de l'Exploitation des Vulnérabilités",
+          exp_axa_date:'12/02/2026 — Durée : 6 mois',
+          exp_axa_bullets:`<li>Conception et développement d'un <strong>Security Pipeline automatisé (OWASP 2025)</strong> sous Docker.</li><li><strong>Phase Discovery :</strong> crawl automatisé des endpoints, JS-linked URLs et reconnaissance approfondie avec <strong>Katana</strong>.</li><li><strong>Phase CLI Toolchain :</strong> orchestration et exécution automatisée de <strong>Nmap, Nuclei, ffuf, sqlmap, Dalfox, XSStrike, testssl.sh</strong> en live streaming.</li><li><strong>Phase OWASP Engine :</strong> scanner d'insertion Burp-style + catalogue OWASP (crypto, auth, injection, SSRF, logging…).</li><li><strong>Phase Report :</strong> agrégation des findings, scoring CVSS, recommandations de remédiation et export PDF automatique.</li><li>Rédaction de rapports de sécurité et audit des risques.</li><li>Déploiement et gestion de l'environnement conteneurisé (Docker).</li>`,
+          exp_cnexia_role:'Chargé de la Clientèle Bilingue (Français / Anglais)',
+          exp_cnexia_dept:'Département Prépayement PC Mobile & No Name Mobile — 01/07/2025',
+          exp_cnexia_bullets:`<li>Support et accompagnement des clients (français et anglais).</li><li>Gestion des demandes, réclamations et suivi des services prépayés.</li><li>Collaboration avec <strong>BELL Canada</strong> pour les services télécoms.</li>`,
+          exp_yzy_role:'Démocratisation des Outils AI pour les PME au Maroc',
+          exp_yzy_date:'01/07/2025 — Durée : 2 mois',
+          exp_yzy_bullets:`<li>Adaptation du modèle de chatbot pour un usage cybersécurité (détection et réponse rapide).</li><li>Optimisation de la sécurité et de la confidentialité des données.</li><li>Planning et cahier de charge pour la réalisation (méthode agile – Scrum).</li><li>Conception de la logique du <strong>Fine Tuning</strong> et traitement de la qualité des données.</li><li>Prototype de chatbot (MVP) avec <strong>RAG + vector DB</strong> (Python, base de données vectorielle).</li><li>Préparation de DATA + fine tuning du modèle (domaine cybersécurité).</li><li>Optimisation des réponses (qualité, rapidité) – tests utilisateurs internes.</li>`,
+          exp_smart_role:'Application Full Stack de Gestion de Facture (Laravel)',
+          exp_smart_date:'01/07/2024 — Durée : 2 mois',
+          exp_smart_bullets:`<li><strong>Gestion de projet :</strong></li><li>Cadrage & rédaction du cahier de charge avec l'équipe métier (comptabilité).</li><li>Planification des tâches suivant <strong>Agile/Scrum</strong> sous <strong>Notion</strong>.</li><li>Conception des diagrammes <strong>UML</strong> (cas d'utilisation / diagramme de classe).</li><li><strong>Développement :</strong><ul class="list-disc pl-5 mt-1"><li>Module gestion des utilisateurs (authentification, rôles, espaces client/comptable).</li><li>Module de gestion de la facture (import facture / intégration API <strong>Gemini</strong> pour extraction des données).</li></ul></li>`,
+          exp_anrt_role:'Service Réseaux — Infrastructure & Sécurité Informatique',
+          exp_anrt_date:'01/08/2022 — Durée : 2 mois',
+          exp_anrt_bullets:`<li>Configuration sécurisée de switches, routeurs et firewalls (PFSense).</li><li>Utilisation de Linux et Packet Tracer pour la simulation et la supervision réseau.</li><li>Participation à un projet de sécurisation réseau (analyse de vulnérabilités, durcissement des accès).</li><li>Supervision de l'infrastructure et gestion des droits d'accès utilisateurs.</li><li>Suivi de l'architecture réseau avec une approche défensive (prévention et détection des menaces).</li>`,
+          gallery_title:'Galerie', gallery_title2:'Photos',
+          lang_title:'Langues', lang_title2:'& Communication',
+          lang_arabic:'Arabe', lang_arabic_level:'C2 — Natif',
+          lang_english:'Anglais', lang_english_level:'B2 — Avancé',
+          lang_french:'Français', lang_french_level:'B2 — Avancé',
+          contact_title:'Me', contact_title2:'Contacter',
+          contact_ph_name:'Votre nom', contact_ph_email:'Votre email', contact_ph_msg:'Votre message',
+          contact_btn:'Envoyer le message', contact_btn_loading:'Envoi en cours...',
+          contact_success:'Message envoyé avec succès ! Je vous répondrai bientôt.',
+          contact_error:"Erreur lors de l'envoi du message. Veuillez réessayer ou me contacter directement à ayoubelkirat@gmail.com",
+          modal_hint:"Cliquez en dehors de l'image ou sur la croix pour fermer",
+          footer:'© 2025 Ayoub El Kirat. Tous droits réservés.'
+        }
+      };
+
+      let currentLang = localStorage.getItem('language') || 'en';
+
+      function applyLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem('language', lang);
+        const t = translations[lang];
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (t[key] !== undefined) el.textContent = t[key];
+        });
+        document.querySelectorAll('[data-i18n-html]').forEach(el => {
+          const key = el.getAttribute('data-i18n-html');
+          if (t[key] !== undefined) el.innerHTML = t[key];
+        });
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+          const key = el.getAttribute('data-i18n-placeholder');
+          if (t[key] !== undefined) el.placeholder = t[key];
+        });
+        document.getElementById('langToggle').textContent = lang === 'en' ? 'FR' : 'EN';
+        document.documentElement.lang = lang;
+      }
+
+      document.getElementById('langToggle').addEventListener('click', () => {
+        applyLanguage(currentLang === 'en' ? 'fr' : 'en');
+      });
+
+      // ── Theme ──────────────────────────────────────────────────────────────
       const root = document.documentElement;
       const setThemeIcon = (isDark) => {
         const icon = document.getElementById('themeIcon');
@@ -798,131 +658,78 @@
         icon.setAttribute('data-lucide', isDark ? 'moon' : 'sun');
         window.lucide.createIcons();
       };
-
-      // Init theme from localStorage
       const stored = localStorage.getItem('darkMode');
       const initialDark = stored === 'true';
       if (initialDark) root.classList.add('dark');
-
-      // Init icons (after potential dark class)
       window.lucide && window.lucide.createIcons();
       setThemeIcon(initialDark);
-
-      // Toggle theme + icon
       document.getElementById('toggleTheme').addEventListener('click', () => {
         const isDark = root.classList.toggle('dark');
         localStorage.setItem('darkMode', isDark);
         setThemeIcon(isDark);
       });
 
-      // Remove scores from certifications ("Note obtenue : ...")
-      document.querySelectorAll('#certifications p').forEach((el) => {
-        if ((el.textContent || '').trim().toLowerCase().startsWith('note obtenue')) {
-          el.remove();
-        }
+      // ── Apply stored language on load ──────────────────────────────────────
+      applyLanguage(currentLang);
+
+      // ── Remove score lines in certifications ──────────────────────────────
+      document.querySelectorAll('#certifications p').forEach(el => {
+        if ((el.textContent || '').trim().toLowerCase().startsWith('note obtenue')) el.remove();
       });
 
-      // Gallery modal functions
-      function openModal(imageSrc) {
-        const modal = document.getElementById('imageModal');
-        const modalImage = document.getElementById('modalImage');
-        modalImage.src = imageSrc;
-        modal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      // ── Gallery modal ──────────────────────────────────────────────────────
+      function openModal(src) {
+        document.getElementById('modalImage').src = src;
+        document.getElementById('imageModal').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
       }
-
       function closeModal() {
-        const modal = document.getElementById('imageModal');
-        modal.classList.add('hidden');
-        document.body.style.overflow = 'auto'; // Restore scrolling
+        document.getElementById('imageModal').classList.add('hidden');
+        document.body.style.overflow = 'auto';
       }
-
-      // Event listeners for modal
       document.getElementById('closeModal').addEventListener('click', closeModal);
-      document.getElementById('imageModal').addEventListener('click', function(e) {
-        if (e.target === this) {
-          closeModal();
-        }
-      });
+      document.getElementById('imageModal').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-      // Close modal with Escape key
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-          closeModal();
-        }
-      });
-
-      // EmailJS Configuration
+      // ── EmailJS ────────────────────────────────────────────────────────────
       (function() {
-        // Initialize EmailJS with your public key
         emailjs.init("PRzxH42bXF_MS8gE8");
-        
-        // Contact form handling
-        const contactForm = document.getElementById('contactForm');
+        const form = document.getElementById('contactForm');
         const submitBtn = document.getElementById('submitBtn');
         const btnText = document.getElementById('btnText');
         const btnLoading = document.getElementById('btnLoading');
-        const successMessage = document.getElementById('successMessage');
-        const errorMessage = document.getElementById('errorMessage');
-        const errorText = document.getElementById('errorText');
+        const successMsg = document.getElementById('successMessage');
+        const errorMsg = document.getElementById('errorMessage');
 
-        contactForm.addEventListener('submit', function(e) {
+        form.addEventListener('submit', function(e) {
           e.preventDefault();
-          
-          // Show loading state
           submitBtn.disabled = true;
           btnText.classList.add('hidden');
           btnLoading.classList.remove('hidden');
-          
-          // Hide previous messages
-          successMessage.classList.add('hidden');
-          errorMessage.classList.add('hidden');
+          successMsg.classList.add('hidden');
+          errorMsg.classList.add('hidden');
 
-          // Get form data
-          const formData = {
+          emailjs.send('service_ezfht1b', 'template_e3va6pb', {
             from_name: document.getElementById('from_name').value,
             from_email: document.getElementById('from_email').value,
             message: document.getElementById('message').value,
-            to_email: 'ayoubelkirat@gmail.com' // Votre email de destination
-          };
-
-          // Send email using EmailJS
-          emailjs.send('service_ezfht1b', 'template_e3va6pb', formData)
-            .then(function(response) {
-              console.log('SUCCESS!', response.status, response.text);
-              
-              // Show success message
-              successMessage.classList.remove('hidden');
-              
-              // Reset form
-              contactForm.reset();
-              
-              // Reset button state
-              submitBtn.disabled = false;
-              btnText.classList.remove('hidden');
-              btnLoading.classList.add('hidden');
-              
-              // Scroll to success message
-              successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-              
-            }, function(error) {
-              console.log('FAILED...', error);
-              
-              // Show error message
-              errorText.textContent = 'Erreur lors de l\'envoi du message. Veuillez réessayer ou me contacter directement à ayoubelkirat@gmail.com';
-              errorMessage.classList.remove('hidden');
-              
-              // Reset button state
-              submitBtn.disabled = false;
-              btnText.classList.remove('hidden');
-              btnLoading.classList.add('hidden');
-              
-              // Scroll to error message
-              errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            });
+            to_email: 'ayoubelkirat@gmail.com'
+          }).then(() => {
+            successMsg.classList.remove('hidden');
+            form.reset();
+            submitBtn.disabled = false;
+            btnText.classList.remove('hidden');
+            btnLoading.classList.add('hidden');
+            successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, () => {
+            errorMsg.classList.remove('hidden');
+            submitBtn.disabled = false;
+            btnText.classList.remove('hidden');
+            btnLoading.classList.add('hidden');
+            errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          });
         });
       })();
     </script>
   </body>
 </html>
-
